@@ -1,6 +1,8 @@
+const CIRCLE_DEGREE = 360;
+
 const frame = document.querySelector("section");
 const lists = frame.querySelectorAll("article");
-const deg = 45;
+const deg = CIRCLE_DEGREE / lists.length;
 const len = lists.length - 1;
 const prev = document.querySelector(".btnPrev");
 const next = document.querySelector(".btnNext");
@@ -82,3 +84,7 @@ function activation(index, lists) {
   }
   lists[index].classList.add("on");
 }
+
+(() => {
+  lists[0].classList.add("on");
+})();
